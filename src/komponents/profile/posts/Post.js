@@ -6,8 +6,9 @@ function Post(props) {
     return (
         <div className="post">
             <img className="profilepicmini" src={profilepicmini} />
-            <p className="postNickname">{props.nickname}</p>
+            <p className="postNickname">fireball</p>
             <p className="postTxt">{props.message}</p>
+            <p>{props.likes} likes</p>
         </div>
 
 

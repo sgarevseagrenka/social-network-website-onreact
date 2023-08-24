@@ -3,12 +3,14 @@ import "./profile.css"
 import Posts from "./posts/Posts";
 import User_infor from "./User_infor";
 
-function Profile() {
+
+
+function Profile(props) {
     return (
         <div className="profile">
             <User_infor />
             <h3>My Posts</h3>
-            <Posts />
+            <Posts posts__infor={props.posts__infor} />
 
 
         </div>

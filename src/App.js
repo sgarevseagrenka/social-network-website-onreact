@@ -8,7 +8,8 @@ import Feed from './komponents/feed/Feed';
 import Friends from './komponents/friends/Friends'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-function App() {
+
+function App(props) {
   return (
     <div className='wrapper'>
       <Header />
@@ -17,9 +18,9 @@ function App() {
         <div className='wrapper__content'>
 
           <Routes>
-            <Route exact path="/" element={<Messages />} />
-            <Route exact path="/profile" element={<Profile />} />
-            <Route exact path="/messages" element={<Messages />} />
+            <Route exact path="/" element={<Profile />} />
+            <Route exact path="/profile" element={<Profile posts__infor={props.posts__infor} />} />
+            <Route exact path="/messages" element={<Messages messages_users={props.messages_users} messages_texts={props.messages_texts} />} />
             <Route exact path="/users" element={<Users />} />
             <Route exact path="/feed" element={<Feed />} />
             <Route exact path="/friends" element={<Friends />} />
