@@ -1,0 +1,75 @@
+.messages{
+    margin: 20px;
+
+}
+.messages__content{
+    display: grid;
+    grid-template-areas: 
+    "u c"
+    "u c"
+    "u p";
+    grid-template-columns:2fr 10fr;
+    grid-gap: 10px;
+
+}
+.messages__title{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.messages__users{
+    grid-area: u;
+
+}
+.messages__user{
+    text-decoration: none;
+    color: white;
+    background-color: #f169c4;
+    margin-bottom: 10px;
+}
+
+.chat{
+    grid-area: c;
+    
+
+
+}
+
+.mesages__prep{
+    grid-area: p;
+    display: flex;
+    justify-content: space-around;
+} 
+
+.input{
+    width:80% ;
+
+}
+
+.message{
+    display: grid;
+    grid-template-areas: 
+    "messageNickname profilepicmini"
+    "messageTxt messageTxt";
+    
+    grid-template-columns:2fr 10fr;
+    background-color: #ff4569;
+    border-radius: 25px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.profilepicmini{
+    width: 30%;
+    margin: 5px;
+    grid-area:profilepicmini;
+
+}
+.messageNickname{
+    font-weight:600 ;
+    grid-area:messageNickname;
+}
+.messageTxt{
+    grid-area:messageTxt;
+    
+}
+

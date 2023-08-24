@@ -1,0 +1,18 @@
+import React from "react";
+import "./profile.css"
+import Posts from "./posts/Posts";
+import User_infor from "./User_infor";
+
+function Profile() {
+    return (
+        <div className="profile">
+            <User_infor />
+            <h3>My Posts</h3>
+            <Posts />
+
+
+        </div>
+    );
+
+}
+export default Profile

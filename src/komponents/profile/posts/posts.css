@@ -1,0 +1,29 @@
+.posts{
+    margin: 20px;
+}
+.post{
+    display: grid;
+    grid-template-areas: 
+    "profilepicmini postNickname"
+    "postTxt postTxt";
+    
+    grid-template-columns:2fr 10fr;
+    background-color: #ff4569;
+    border-radius: 25px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.profilepicmini{
+    width: 30%;
+    margin: 5px;
+    grid-area:profilepicmini;
+
+}
+.postNickname{
+    font-weight:600 ;
+    grid-area:postNickname;
+}
+.postTxt{
+    grid-area:postTxt;
+    
+}

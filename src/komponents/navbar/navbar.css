@@ -1,0 +1,17 @@
+.navbar a{
+    display: block;
+    margin-bottom: 5px;
+    color:white; 
+    transition: 0.5s;   
+}
+.navbar a:hover{
+    color:red;    
+}
+.navbar{
+    padding: 10px;
+    
+}
+.navbar a.active{
+    background-color: #f169c4;
+
+}
