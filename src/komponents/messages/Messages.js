@@ -11,11 +11,11 @@ function Messages(props) {
             <p className="messages__title">Messages</p>
             <div className="messages__content">
                 <div className="messages__users">
-                    {props.messages_users.map((e) => <Messages_user id={e.id} name={e.name} />)}
+                    {props.messages_page.messages_users.map((e) => <Messages_user id={e.id} name={e.name} />)}
                 </div>
 
                 <div className="chat">
-                    {props.messages_texts.map((e) => <Message message={e.message} nickname={e.nickname} id={e.id} />)}
+                    {props.messages_page.messages_texts.map((e) => <Message message={e.message} nickname={e.nickname} id={e.id} />)}
                 </div>
 
                 <div className="mesages__prep">
