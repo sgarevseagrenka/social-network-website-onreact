@@ -10,7 +10,7 @@ function Profile(props) {
         <div className="profile">
             <User_infor />
             <h3>My Posts</h3>
-            <Posts posts__infor={props.profile_page.posts__infor} />
+            <Posts posts__infor={props.profile_page.posts__infor} add_post={props.add_post} />
 
 
         </div>

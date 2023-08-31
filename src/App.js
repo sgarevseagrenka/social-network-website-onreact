@@ -18,12 +18,12 @@ function App(props) {
         <div className='wrapper__content'>
 
           <Routes>
-            <Route exact path="/" element={<Profile profile_page={props.state.profile_page} />} />
-            <Route exact path="/profile" element={<Profile profile_page={props.state.profile_page} />} />
+            <Route exact path="/" element={<Profile profile_page={props.state.profile_page} add_post={props.add_post} />} />
+            <Route exact path="/profile" element={<Profile profile_page={props.state.profile_page} add_post={props.add_post} />} />
             <Route exact path="/messages" element={<Messages messages_page={props.state.messages_page} />} />
             <Route exact path="/users" element={<Users />} />
             <Route exact path="/feed" element={<Feed />} />
-            <Route exact path="/friends" element={<Friends />} />
+            <Route exact path="/friends" element={<Friends friends_page={props.state.friends_page} />} />
           </Routes>
 
         </div>

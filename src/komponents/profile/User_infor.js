@@ -6,7 +6,7 @@ import Posts from "./posts/Posts";
 function User_infor() {
     return (
         <div className="user">
-            <img className="profilepic" src={profilepic}></img>
+            <img className="profilepic" src={profilepic} />
             <p className="nickname">fireball</p>
         </div>
     );

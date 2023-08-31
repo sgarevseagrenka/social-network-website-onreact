@@ -14,8 +14,21 @@ let state = {
             { id: 1, message: "sponsored by vaza s vadoy. vaza s vadoy is a vaza containing vada witch hydrate.  you can buy it tuday for only 9.999$", nickname: "fireball" },
             { id: 2, nickname: "toasted grenka", message: "goes best with an vaza s vadoy" }
         ]
-    }
+    },
+    friends_page: {
+        friends_list: [
+            { id: 0, nickname: "ffffffffffff", pic: "logo512.png" }
+        ]
 
 
+    },
 };
+export let add_post = (post_message) => {
+    let new_post = {
+        id: 6, message: post_message, likes: -19998
+    }
+    state.profile_page.posts__infor.push(new_post)
+    console.log(state);
+
+}
 export default state;
