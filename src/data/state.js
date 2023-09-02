@@ -1,3 +1,4 @@
+import { rerender_tree } from "../render"
 let state = {
     profile_page: {
         posts__infor: [
@@ -23,12 +24,20 @@ let state = {
 
     },
 };
-export let add_post = (post_message) => {
+export let add_post = (post_post_message) => {
     let new_post = {
-        id: 6, message: post_message, likes: -19998
+        id: 6, message: post_post_message, likes: -19998
     }
-    state.profile_page.posts__infor.push(new_post)
-    console.log(state);
+    state.profile_page.posts__infor.unshift(new_post)
+    rerender_tree(state);
+
+}
+export let add_message = (send_message) => {
+    let new_message = {
+        id: 0, message: send_message, nickname: "toasted grenka"
+    }
+    state.messages_page.messages_texts.push(new_message)
+    rerender_tree(state);
 
 }
 export default state;

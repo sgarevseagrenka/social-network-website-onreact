@@ -3,6 +3,7 @@ import "./messages.css"
 import profilepicmini from "../../img/logo.png"
 
 function Message(props) {
+
     return (
         <div className="message">
             {/* <img className="profilepicmini" src={`${props.profilepic}`} /> */}

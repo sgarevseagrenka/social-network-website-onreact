@@ -6,6 +6,7 @@ let post_text = React.createRef()
 function Posts(props) {
     let add_post = () => {
         props.add_post(post_text.current.value);
+        post_text.current.value = ""
 
     };
     return (
