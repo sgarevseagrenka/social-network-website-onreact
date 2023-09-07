@@ -18,12 +18,23 @@ function App(props) {
         <div className='wrapper__content'>
 
           <Routes>
-            <Route exact path="/" element={<Profile profile_page={props.state.profile_page} add_post={props.add_post} />} />
-            <Route exact path="/profile" element={<Profile profile_page={props.state.profile_page} add_post={props.add_post} />} />
-            <Route exact path="/messages" element={<Messages messages_page={props.state.messages_page} add_message={props.add_message} />} />
+            <Route exact path="/" element={<Profile
+              profile_page={props.state.profile_page}
+              add_post={props.add_post}
+              new_post_text={props.state.profile_page.new_post_text}
+              on_post_change={props.on_post_change} />} />
+            <Route exact path="/profile" element={<Profile
+              profile_page={props.state.profile_page}
+              add_post={props.add_post}
+              new_post_text={props.state.profile_page.new_post_text}
+              on_post_change={props.on_post_change} />} />
+            <Route exact path="/messages" element={<Messages
+              messages_page={props.state.messages_page}
+              add_message={props.add_message} />} />
             <Route exact path="/users" element={<Users />} />
             <Route exact path="/feed" element={<Feed />} />
-            <Route exact path="/friends" element={<Friends friends_page={props.state.friends_page} />} />
+            <Route exact path="/friends" element={<Friends
+              friends_page={props.state.friends_page} />} />
           </Routes>
 
         </div>

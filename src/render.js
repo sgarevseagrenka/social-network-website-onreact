@@ -3,14 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { add_post } from './data/state';
-import { add_message } from './data/state';
+import { add_post, on_post_change, add_message } from './data/state';
 
 export let rerender_tree = (state) => {
     const root = ReactDOM.createRoot(document.getElementById('root'));
     root.render(
         <React.StrictMode>
-            <App state={state} add_post={add_post} add_message={add_message} />
+            <App state={state} add_post={add_post} on_post_change={on_post_change} add_message={add_message} />
         </React.StrictMode>
     );
 };
