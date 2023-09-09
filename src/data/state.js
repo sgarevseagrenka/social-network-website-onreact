@@ -1,4 +1,9 @@
-import { rerender_tree } from "../render"
+let rerender_tree = () => {
+    console.log("made by vaza s vadoy");
+}
+export let subscribe = (observer) => {
+    rerender_tree = observer;
+}
 let state = {
     profile_page: {
         posts__infor: [
@@ -15,7 +20,8 @@ let state = {
         messages_texts: [
             { id: 1, message: "sponsored by vaza s vadoy. vaza s vadoy is a vaza containing vada witch hydrate.  you can buy it tuday for only 9.999$", nickname: "fireball" },
             { id: 2, nickname: "toasted grenka", message: "goes best with an vaza s vadoy" }
-        ]
+        ],
+        new_message_text: ""
     },
     friends_page: {
         friends_list: [
@@ -27,6 +33,10 @@ let state = {
 };
 export let on_post_change = (text) => {
     state.profile_page.new_post_text = text
+    rerender_tree(state)
+}
+export let on_message_change = (text) => {
+    state.messages_page.new_message_text = text
     rerender_tree(state)
 }
 export let add_post = (post_post_message) => {
@@ -43,6 +53,5 @@ export let add_message = (send_message) => {
     }
     state.messages_page.messages_texts.push(new_message)
     rerender_tree(state);
-
 }
 export default state;

@@ -23,14 +23,20 @@ function App(props) {
               add_post={props.add_post}
               new_post_text={props.state.profile_page.new_post_text}
               on_post_change={props.on_post_change} />} />
+
             <Route exact path="/profile" element={<Profile
               profile_page={props.state.profile_page}
               add_post={props.add_post}
               new_post_text={props.state.profile_page.new_post_text}
               on_post_change={props.on_post_change} />} />
+
             <Route exact path="/messages" element={<Messages
               messages_page={props.state.messages_page}
-              add_message={props.add_message} />} />
+              add_message={props.add_message}
+              new_message_text={props.state.messages_page.new_message_text}
+              on_message_change={props.on_message_change} />} />
+
+
             <Route exact path="/users" element={<Users />} />
             <Route exact path="/feed" element={<Feed />} />
             <Route exact path="/friends" element={<Friends
