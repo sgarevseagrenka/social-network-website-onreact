@@ -19,16 +19,14 @@ function App(props) {
 
           <Routes>
             <Route exact path="/" element={<Profile
+              dispatch={props.dispatch}
               profile_page={props.state.profile_page}
-              add_post={props.add_post}
-              new_post_text={props.state.profile_page.new_post_text}
-              on_post_change={props.on_post_change} />} />
+              new_post_text={props.state.profile_page.new_post_text} />} />
 
             <Route exact path="/profile" element={<Profile
+              dispatch={props.dispatch}
               profile_page={props.state.profile_page}
-              add_post={props.add_post}
-              new_post_text={props.state.profile_page.new_post_text}
-              on_post_change={props.on_post_change} />} />
+              new_post_text={props.state.profile_page.new_post_text} />} />
 
             <Route exact path="/messages" element={<Messages
               messages_page={props.state.messages_page}

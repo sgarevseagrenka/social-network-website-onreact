@@ -1,3 +1,5 @@
+import { type } from "@testing-library/user-event/dist/type"
+
 let store = {
     _state: {
         profile_page: {
@@ -26,23 +28,11 @@ let store = {
 
         },
     },
-    on_post_change(text) {
-        this._state.profile_page.new_post_text = text
-        this.rerender_tree(this._state)
-    },
     on_message_change(text) {
         this._state.messages_page.new_message_text = text
         this.rerender_tree(this._state)
     },
-    add_post(post_post_message) {
-        let new_post = {
-            id: 6, message: post_post_message, likes: -19998
-        }
-        this._state.profile_page.posts__infor.unshift(new_post)
-        this._state.profile_page.new_post_text = ""
-        this.rerender_tree(this._state);
 
-    },
     add_message(send_message) {
         let new_message = {
             id: 0, message: send_message, nickname: "toasted grenka"
@@ -59,6 +49,22 @@ let store = {
     },
     get_state() {
         return this._state
+    },
+    dispatch(action) {
+        if (action.type == "ADD_POST") {
+            let new_post = {
+                id: 6,
+                message: this._state.profile_page.new_post_text,
+                likes: -19998
+            }
+            this._state.profile_page.posts__infor.unshift(new_post)
+            this._state.profile_page.new_post_text = ""
+            this.rerender_tree(this._state);
+        } else if (action.type == "POST_CHANGE") {
+            this._state.profile_page.new_post_text = action.text
+            this.rerender_tree(this._state)
+        }
+
     }
 
 }
