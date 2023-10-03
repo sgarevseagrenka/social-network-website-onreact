@@ -9,9 +9,8 @@ export let rerender_tree = (state) => {
     root.render(
         <React.StrictMode>
             <App state={state}
-                dispatch={store.dispatch.bind(store)}
-                add_message={store.add_message.bind(store)}
-                on_message_change={store.on_message_change.bind(store)} />
+                dispatch={store.dispatch.bind(store)} />
+
         </React.StrictMode>
     );
 };

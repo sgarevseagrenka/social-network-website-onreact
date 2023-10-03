@@ -9,15 +9,15 @@ let message_text = React.createRef()
 function Messages(props) {
 
     let add_message = () => {
-        let message_value = message_text.current.value
+        props.dispatch({ type: "SEND_MESSAGE" });
         message_text.current.value = ""
-        props.add_message(message_value);
-
 
     }
     let on_message_change = () => {
-        props.on_message_change(message_text.current.value);
-
+        props.dispatch({
+            type: "MESSAGE_CHANGE",
+            text: message_text.current.value
+        })
 
     }
     return (

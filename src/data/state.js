@@ -1,5 +1,3 @@
-import { type } from "@testing-library/user-event/dist/type"
-
 let store = {
     _state: {
         profile_page: {
@@ -28,19 +26,7 @@ let store = {
 
         },
     },
-    on_message_change(text) {
-        this._state.messages_page.new_message_text = text
-        this.rerender_tree(this._state)
-    },
 
-    add_message(send_message) {
-        let new_message = {
-            id: 0, message: send_message, nickname: "toasted grenka"
-        }
-        this._state.messages_page.messages_texts.push(new_message)
-        this._state.messages_page.new_message_text = ""
-        this.rerender_tree(this._state);
-    },
     rerender_tree() {
         console.log("made by vaza s vadoy");
     },
@@ -63,6 +49,20 @@ let store = {
         } else if (action.type == "POST_CHANGE") {
             this._state.profile_page.new_post_text = action.text
             this.rerender_tree(this._state)
+        }
+        else if (action.type == "MESSAGE_CHANGE") {
+            this._state.messages_page.new_message_text = action.text
+            this.rerender_tree(this._state)
+        }
+        else if (action.type == "SEND_MESSAGE") {
+            let new_message = {
+                id: 0,
+                message: this._state.messages_page.new_message_text,
+                nickname: "toasted grenka"
+            }
+            this._state.messages_page.messages_texts.push(new_message)
+            this._state.messages_page.new_message_text = ""
+            this.rerender_tree(this._state);
         }
 
     }

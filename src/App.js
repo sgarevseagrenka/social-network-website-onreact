@@ -29,10 +29,9 @@ function App(props) {
               new_post_text={props.state.profile_page.new_post_text} />} />
 
             <Route exact path="/messages" element={<Messages
+              dispatch={props.dispatch}
               messages_page={props.state.messages_page}
-              add_message={props.add_message}
-              new_message_text={props.state.messages_page.new_message_text}
-              on_message_change={props.on_message_change} />} />
+              new_message_text={props.state.messages_page.new_message_text} />} />
 
 
             <Route exact path="/users" element={<Users />} />
