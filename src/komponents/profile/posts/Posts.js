@@ -1,18 +1,17 @@
 import React from "react";
 import "./posts.css"
 import Post from "./Post";
+import { on_post_change_AC, add_post_AC } from "../../../data/profile_reduser";
 let post_text = React.createRef()
 
 function Posts(props) {
+
     let add_post = () => {
-        props.dispatch({ type: "ADD_POST" })
+        props.dispatch(add_post_AC())
         post_text.current.value = ""
     };
     let on_post_change = () => {
-        props.dispatch({
-            type: "POST_CHANGE",
-            text: post_text.current.value
-        })
+        props.dispatch(on_post_change_AC(post_text.current.value))
     }
     return (
         <div className="posts">

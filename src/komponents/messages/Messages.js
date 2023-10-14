@@ -1,23 +1,22 @@
 import React from "react";
 import Message from "../messages/Message";
 import "./messages.css"
-import { NavLink } from "react-router-dom";
+import { on_message_change_AC, send_message_AC } from "../../data/messages_reduser";
 import Messages_user from "./messages_users/Messages_user";
 // import profilepicmini from "../../img/logo.png"
 let message_text = React.createRef()
 
 function Messages(props) {
 
-    let add_message = () => {
-        props.dispatch({ type: "SEND_MESSAGE" });
+    let send_message = () => {
+        props.dispatch(send_message_AC());
         message_text.current.value = ""
 
     }
     let on_message_change = () => {
-        props.dispatch({
-            type: "MESSAGE_CHANGE",
-            text: message_text.current.value
-        })
+        props.dispatch(
+            on_message_change_AC(message_text.current.value)
+        )
 
     }
     return (
@@ -34,7 +33,7 @@ function Messages(props) {
 
                 <div className="mesages__prep">
                     <input autoFocus onChange={on_message_change} className="input" value={props.new_message_text} ref={message_text} placeholder="write message here"></input>
-                    <button onClick={add_message}>Add Message</button>
+                    <button onClick={send_message}>Add Message</button>
                 </div>
             </div>
         </div>
